@@ -15,6 +15,8 @@ This repository defines the interoperable protocol surface. It does not contain 
 - [Lifecycle state machine](spec/lifecycle.md)
 - [Funding and settlement invariants](spec/funding.md)
 - [Security model](spec/security.md)
+- [AI2Human Improvement Proposals](aips/README.md)
+- [Architecture Decision Records](adr/README.md)
 
 ## Machine-readable schemas
 
@@ -36,3 +38,5 @@ This repository defines the interoperable protocol surface. It does not contain 
 ## Status
 
 `preview` — the semantics describe the live AI2Human workflow, while field names may still evolve through versioned proposals.
+
+Breaking semantic changes require an AIP, compatibility analysis, migration guidance, and a version boundary.
