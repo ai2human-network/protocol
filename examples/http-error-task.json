@@ -1,0 +1,11 @@
+{
+  "version": "ai2human-task/v1",
+  "id": "example-http-error",
+  "title": "Reproduce a persistent HTTP error in a normal browser",
+  "category": "digital_task",
+  "brief": "Open the supplied controlled test URL three times and record the visible result. Do not log in or submit credentials.",
+  "deadline": "2027-01-01T00:00:00Z",
+  "funding": {"mode": "test_no_payout"},
+  "proofRequirements": ["Readable screenshot with the URL visible", "Timestamp", "Browser and device details", "Concise reproduction notes"],
+  "acceptanceCriteria": ["Evidence shows the requested URL", "The visible result is readable", "Notes state the outcome of all three attempts"]
+}

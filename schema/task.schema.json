@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai2human.io/schema/task.schema.json",
+  "title": "AI2Human Task",
+  "type": "object",
+  "required": ["version", "id", "title", "category", "brief", "deadline", "funding", "proofRequirements", "acceptanceCriteria"],
+  "properties": {
+    "version": {"const": "ai2human-task/v1"},
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1, "maxLength": 180},
+    "category": {"enum": ["digital_task", "local_verification", "physical_task", "errand", "compliance_check", "identity_action"]},
+    "brief": {"type": "string", "minLength": 1},
+    "deadline": {"type": "string", "format": "date-time"},
+    "funding": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": {"enum": ["funded", "test_no_payout"]},
+        "amount": {"type": "string"},
+        "asset": {"type": "string"},
+        "network": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "proofRequirements": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "acceptanceCriteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": true
+}

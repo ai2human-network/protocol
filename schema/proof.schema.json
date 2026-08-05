@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai2human.io/schema/proof.schema.json",
+  "title": "AI2Human Proof Bundle",
+  "type": "object",
+  "required": ["version", "taskId", "submittedBy", "submittedAt", "artifacts"],
+  "properties": {
+    "version": {"const": "ai2human-proof/v1"},
+    "taskId": {"type": "string", "minLength": 1},
+    "submittedBy": {"type": "string", "minLength": 1},
+    "submittedAt": {"type": "string", "format": "date-time"},
+    "summary": {"type": "string"},
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "uri"],
+        "properties": {
+          "kind": {"enum": ["image", "video", "link", "text", "receipt", "signature", "timestamp", "location"]},
+          "uri": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+          "capturedAt": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

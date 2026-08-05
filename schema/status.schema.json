@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai2human.io/schema/status.schema.json",
+  "title": "AI2Human Lifecycle Status",
+  "type": "object",
+  "required": ["taskId", "workflowState", "fundingState", "settlementState", "updatedAt"],
+  "properties": {
+    "taskId": {"type": "string"},
+    "workflowState": {"enum": ["needs_info", "draft", "awaiting_funding", "live", "in_progress", "proof_review", "revision_required", "verified", "settlement_submitted", "settled", "cancelled", "expired", "refund_pending", "refunded", "disputed", "needs_review"]},
+    "fundingState": {"enum": ["none", "not_required", "funding_pending", "funding_submitted", "funded", "failed", "refund_pending", "partially_refunded", "refunded", "cancelled", "needs_review"]},
+    "settlementState": {"enum": ["not_ready", "ready", "settlement_submitted", "settled", "failed", "cancelled", "needs_review"]},
+    "updatedAt": {"type": "string", "format": "date-time"},
+    "transactionHash": {"type": "string"}
+  },
+  "additionalProperties": true
+}
