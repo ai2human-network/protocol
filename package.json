@@ -1,1 +1,1 @@
-{"name":"@ai2human/protocol","version":"0.1.0-preview.1","private":true,"scripts":{"validate":"node scripts-validate.mjs"}}
+{"name":"@ai2human/protocol","version":"0.1.0-preview.1","private":true,"scripts":{"validate":"node scripts-validate.mjs && node scripts-validate-openapi.mjs"}}

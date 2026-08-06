@@ -23,6 +23,7 @@ This repository defines the interoperable protocol surface. It does not contain 
 - [`task.schema.json`](schema/task.schema.json)
 - [`proof.schema.json`](schema/proof.schema.json)
 - [`status.schema.json`](schema/status.schema.json)
+- [Agent API OpenAPI 3.1](openapi/ai2human.openapi.yaml)
 
 ## Protocol invariants
 
